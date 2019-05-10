@@ -14,6 +14,7 @@
     "@angular/core": "^7.2.5",
     "@angular/flex-layout": "^7.0.0-beta.24",
     "@angular/forms": "^7.2.5",
+    "@angular/material": "^7.3.7",
     "@angular/platform-browser": "^7.2.5",
     "@angular/platform-browser-dynamic": "^7.2.5",
     "@angular/router": "^7.2.5",
@@ -26,7 +27,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build:lib:dealers-company-list": "npm run unlink:lib:dealers-company-list && npm run version:lib:dealers-company-list  && ng build c-dealers-company-list && npm run pack:lib:dealers-company-list && npm run publish:lib:dealers-company-list && npm run git:publish:lib:dealers-company-list",
+    "build:lib:dealers-company-list": " npm run unlink:lib:dealers-company-list &&npm run version:lib:dealers-company-list  && ng build c-dealers-company-list && npm run pack:lib:dealers-company-list && npm run publish:lib:dealers-company-list && npm run git:publish:lib:dealers-company-list",
     "unlink:lib:dealers-company-list": "cd dist/c-dealers-company-list  && npm unlink",
     "version:lib:dealers-company-list": "cd projects/c-dealers-company-list && npm --no-git-tag-version version patch -m \"Versiyon no: %s\"",
     "delete:lib:dealers-company-list": "echo silme && cd && cd dist && rmdir c-dealers-company-list /S /Q && cd",
