@@ -1,0 +1,44 @@
+<mat-card *ngIf="isCompanySelected">
+  
+	<mat-card-title>
+		<button
+      (click)="returnBackToList()"
+        mat-icon-button >
+        <mat-icon >arrow_back_ios</mat-icon>
+      </button>
+      <label class="back-header">Bayi Detayları</label>
+	</mat-card-title>
+
+ <mat-card-content [style.display]="display_loading">
+    <img src="https://loading.io/spinners/ellipsis/lg.discuss-ellipsis-preloader.gif" height="60" >
+  </mat-card-content> 
+
+	<mat-card-content  [style.display]="display_view">
+		<h4>Bayi Adı : {{company?.name}}</h4>
+		<h4>Firmalar : </h4> 
+        <table mat-table  [dataSource]="company?.users" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> Firma Adı </th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="surname">
+              <th mat-header-cell *matHeaderCellDef> Adres </th>
+              <td mat-cell *matCellDef="let element"> {{element.surname}} </td>
+            </ng-container>
+           <ng-container matColumnDef="phonenumber">
+              <th mat-header-cell *matHeaderCellDef> Telefon No. </th>
+              <td mat-cell *matCellDef="let element"> {{element.phonenumber}} </td>
+            </ng-container>
+            <ng-container matColumnDef="mail">
+              <th mat-header-cell *matHeaderCellDef>E-Mail </th>
+              <td mat-cell *matCellDef="let element"> {{element.mail}} </td>
+            </ng-container>
+          <tr mat-header-row *matHeaderRowDef="['name', 'surname','phonenumber','mail']"></tr>
+          <tr mat-row *matRowDef="let row; columns: ['name', 'surname','phonenumber','mail']"></tr>
+        </table>
+			<h4>Adres :	{{company?.address}} </h4>
+	</mat-card-content>
+
+</mat-card>
