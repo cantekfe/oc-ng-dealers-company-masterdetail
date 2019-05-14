@@ -5,13 +5,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 console.log("app comp", AppComponent);
 import { HelloComponent } from './hello.component';
-import { ListModule } from '../../../../c-dealers-company-list/src/public_api';
+import { DealersListModule } from '../../../../c-dealers-company-list/src/public_api';
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    ListModule
+    DealersListModule
     
     ],
 

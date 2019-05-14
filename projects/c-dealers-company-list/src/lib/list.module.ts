@@ -89,6 +89,6 @@ import {
   exports: [CompanyListComponent]
   })
 
-export class ListModule { }
+export class DealersListModule { }
 
 
