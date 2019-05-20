@@ -1,12 +1,12 @@
 <mat-card *ngIf="isCompanySelected">
   
-	<mat-card-title>
+	<mat-card-title class="c-header">
 		<button
       (click)="returnBackToList()"
         mat-icon-button >
         <mat-icon >arrow_back_ios</mat-icon>
       </button>
-      <label class="back-header">Bayi Detayları</label>
+      <label class="c-back-header">Bayi Detayları</label>
 	</mat-card-title>
 
  <mat-card-content [style.display]="display_loading">
@@ -16,7 +16,7 @@
 	<mat-card-content  [style.display]="display_view">
 		<h4>Bayi Adı : {{company?.name}}</h4>
 		<h4>Firmalar : </h4> 
-        <table mat-table  [dataSource]="company?.users" class="mat-elevation-z8">
+        <table mat-table  [dataSource]="company?.users" class="mat-elevation-z8 c-table">
 
             <ng-container matColumnDef="name">
               <th mat-header-cell *matHeaderCellDef> Firma Adı </th>

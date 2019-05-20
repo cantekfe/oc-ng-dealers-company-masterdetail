@@ -1,12 +1,12 @@
-table {
+.c-table {
   width: 100%;
 }
-mat-card-title{
+.c-header{
   border-bottom:1px solid gray;
   padding-bottom:5px;
   display:flex;
   flex:1 0 0;
 }
-.back-header{
+.c-back-header{
   margin: auto 1px;
 }

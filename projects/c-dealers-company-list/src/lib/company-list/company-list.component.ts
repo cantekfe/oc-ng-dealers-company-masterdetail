@@ -1,11 +1,16 @@
-import { Component, OnInit,Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { CompanyService } from '../services/company.service';
-import { Company } from '../models/company';
 import { trigger, style, transition, animate, state } from '@angular/animations';
+import { ToolboxComponent } from '../toolbox-decorator';
 type PaneType = 'left' | 'right';
+ @ToolboxComponent({
+   desc: 'Dealers-Company List',
+   icon: 'fa fa-chart-bar',
+   componentName : 'CompanyListComponent'
+ })
 
 @Component({
-  selector: 'company-list',
+  selector: 'pack-dealers-company-list-container',
   templateUrl: './company-list.component.html',
   styleUrls: ['./company-list.component.css'],
   animations: [
@@ -23,15 +28,13 @@ export class CompanyListComponent {
   backtothelist = true;
   @Input() activePane: PaneType = 'left';
   constructor(private _compService: CompanyService) {}
-  slideViews(){  
-    console.log("this.activePane: ",this.activePane)
+  slideViews(){ 
     this.activePane = this.activePane === 'left' ? 'right' : 'left';
   }
   onSelection(element: any) {
        this.slideViews();
     this.isCompanySelected = true
     this.selectedCompany = element;
-    console.log(this.selectedCompany);
   }
   ngOnInit() {
     this._compService.getCompanies()
@@ -41,7 +44,6 @@ export class CompanyListComponent {
   }
   onReturnToList(count) {
      this.slideViews();
-    console.log(count);
     this.isCompanySelected = false;
   }
 }
